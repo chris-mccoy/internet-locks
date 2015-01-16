@@ -1,0 +1,926 @@
+# Lowe's IRIS System
+
+## Domains
+
+### irissmarthome.com
+
+* Uses lowes.com DNS servers
+
+```
+$ host -t ns irissmarthome.com
+irissmarthome.com name server authns2.lowes.com.
+irissmarthome.com name server authns1.lowes.com.
+$ host -t any irissmarthome.com authns1.lowes.com
+Using domain server:
+Name: authns1.lowes.com
+Address: 168.244.164.75#53
+Aliases:
+
+irissmarthome.com has SOA record auth.lowes.com. webtechcontact.lowes.com. 2012010323 10800 3600 2419200 900
+irissmarthome.com has address 184.106.86.184
+irissmarthome.com mail is handled by 10 mgw2.trinsictech.com.
+irissmarthome.com mail is handled by 5 mgw1.trinsictech.com.
+irissmarthome.com name server authns1.lowes.com.
+irissmarthome.com name server authns2.lowes.com.
+irissmarthome.com descriptive text "v=spf1 mx mx:mgw1.trinsictech.com mx:mgw2.trinsictech.com mx:mx1.ash.uk.alertme.com mx:mx2.ash.uk.alertme.com mx:mxi.irissmarthome.com ~all"
+```
+```
+authns1.lowes.com has address 168.244.164.75
+authns2.lowes.com has address 168.244.165.75
+irissmarthome.com has address 184.106.86.184
+imgserver.irissmarthome.com has address 184.106.86.181
+auth.irissmarthome.com has address 184.106.86.180
+www.irissmarthome.com has address 184.106.86.184
+hubserver.irissmarthome.com has address 50.57.238.106
+mgw1.trinsictech.com has address 38.97.16.210
+mgw2.trinsictech.com has address 199.193.115.238
+mx1.ash.uk.alertme.com has address 213.129.71.9
+mx2.ash.uk.alertme.com has address 213.129.71.10
+mxi.irissmarthome.com has address 184.106.74.2
+mxi.irissmarthome.com has address 184.106.86.183
+```
+```
+Domain Name: irissmarthome.com
+Registry Domain ID: 1691110729_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.corporatedomains.com
+Registrar URL: www.cscprotectsbrands.com
+Updated Date: 2014-12-05T06:21:20Z
+Creation Date: 2011-12-08T13:33:11Z
+Registrar Registration Expiration Date: 2015-12-08T13:33:11Z
+Registrar: CSC CORPORATE DOMAINS, INC.
+Sponsoring Registrar IANA ID: 299
+Registrar Abuse Contact Email: admin@internationaladmin.com
+Registrar Abuse Contact Phone: +1.8887802723
+Domain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited
+Registry Registrant ID:
+Registrant Name: Domain Administrator
+Registrant Organization: LF, LLC
+Registrant Street: 1000 Lowe's Boulevard
+Registrant City: Mooresville
+Registrant State/Province: NC
+Registrant Postal Code: 28117
+Registrant Country: US
+Registrant Phone: +1.7047581000
+Registrant Phone Ext:
+Registrant Fax: +1.7047581000
+Registrant Fax Ext:
+Registrant Email: webadmincontact@lowes.com
+Registry Admin ID:
+Admin Name: Domain Administrator
+Admin Organization: LF, LLC
+Admin Street: 1000 Lowe's Boulevard
+Admin City: Mooresville
+Admin State/Province: NC
+Admin Postal Code: 28117
+Admin Country: US
+Admin Phone: +1.7047581000
+Admin Phone Ext:
+Admin Fax: +1.7047581000
+Admin Fax Ext:
+Admin Email: webadmincontact@lowes.com
+Registry Tech ID:
+Tech Name: Christopher Roy
+Tech Organization: Lowe's Companies, Inc.
+Tech Street: 1000 Lowes Blvd.
+Tech City: Mooresville
+Tech State/Province: NC
+Tech Postal Code: 28117
+Tech Country: US
+Tech Phone: +1.7047581000
+Tech Phone Ext:
+Tech Fax: +1.3366584766
+Tech Fax Ext:
+Tech Email: webtechcontact@lowes.com
+Name Server: authns1.lowes.com
+Name Server: authns2.lowes.com
+DNSSEC:
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2014-12-05T06:21:20Z <<<
+```
+```
+NetRange:       168.244.0.0 - 168.244.255.255
+CIDR:           168.244.0.0/16
+NetName:        LOWES
+NetHandle:      NET-168-244-0-0-1
+Parent:         NET168 (NET-168-0-0-0-0)
+NetType:        Direct Assignment
+OriginAS:
+Organization:   Lowe's Companies, Inc. (LOWESC)
+RegDate:        1994-09-20
+Updated:        2010-05-14
+Ref:            http://whois.arin.net/rest/net/NET-168-244-0-0-1
+
+OrgName:        Lowe's Companies, Inc.
+OrgId:          LOWESC
+Address:        1000 Lowe's Blvd
+City:           Mooresville
+StateProv:      NC
+PostalCode:     28117
+Country:        US
+RegDate:        1994-09-20
+Updated:        2012-06-28
+Ref:            http://whois.arin.net/rest/org/LOWESC
+
+OrgTechHandle: CSA120-ARIN
+OrgTechName:   Communication Services Admin
+OrgTechPhone:  +1-704-758-5422
+OrgTechEmail:  ipadmin@lowes.com
+OrgTechRef:    http://whois.arin.net/rest/poc/CSA120-ARIN
+
+OrgAbuseHandle: CSA120-ARIN
+OrgAbuseName:   Communication Services Admin
+OrgAbusePhone:  +1-704-758-5422
+OrgAbuseEmail:  ipadmin@lowes.com
+OrgAbuseRef:    http://whois.arin.net/rest/poc/CSA120-ARIN
+```
+```
+NetRange:       184.106.0.0 - 184.106.255.255
+CIDR:           184.106.0.0/16
+NetName:        RACKS-8-NET-4
+NetHandle:      NET-184-106-0-0-1
+Parent:         NET184 (NET-184-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:
+Organization:   Rackspace Hosting (RACKS-8)
+RegDate:        2010-05-21
+Updated:        2012-02-24
+Ref:            http://whois.arin.net/rest/net/NET-184-106-0-0-1
+
+
+OrgName:        Rackspace Hosting
+OrgId:          RACKS-8
+Address:        5000 Walzem Road
+City:           San Antonio
+StateProv:      TX
+PostalCode:     78218
+Country:        US
+RegDate:        2010-03-29
+Updated:        2011-11-30
+Ref:            http://whois.arin.net/rest/org/RACKS-8
+
+OrgAbuseHandle: ABUSE45-ARIN
+OrgAbuseName:   Abuse Desk
+OrgAbusePhone:  +1-210-312-4000
+OrgAbuseEmail:  abuse@rackspace.com
+OrgAbuseRef:    http://whois.arin.net/rest/poc/ABUSE45-ARIN
+
+OrgTechHandle: IPADM17-ARIN
+OrgTechName:   IPADMIN
+OrgTechPhone:  +1-210-312-4000
+OrgTechEmail:  hostmaster@rackspace.com
+OrgTechRef:    http://whois.arin.net/rest/poc/IPADM17-ARIN
+
+RAbuseHandle: ABUSE45-ARIN
+RAbuseName:   Abuse Desk
+RAbusePhone:  +1-210-312-4000
+RAbuseEmail:  abuse@rackspace.com
+RAbuseRef:    http://whois.arin.net/rest/poc/ABUSE45-ARIN
+
+RTechHandle: IPADM17-ARIN
+RTechName:   IPADMIN
+RTechPhone:  +1-210-312-4000
+RTechEmail:  hostmaster@rackspace.com
+RTechRef:    http://whois.arin.net/rest/poc/IPADM17-ARIN
+```
+```
+# nmap -sV -p 80,443,22,8080,2022 imgserver.irissmarthome.com
+
+Starting Nmap 5.21 ( http://nmap.org ) at 2015-01-16 10:43 EST
+Nmap scan report for imgserver.irissmarthome.com (184.106.86.181)
+Host is up (0.045s latency).
+PORT     STATE    SERVICE    VERSION
+22/tcp   filtered ssh
+80/tcp   filtered http
+443/tcp  open     https?
+2022/tcp filtered down
+8080/tcp filtered http-proxy
+
+Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 11.52 seconds
+```
+```
+$ openssl s_client -showcerts -connect imgserver.irissmarthome.com:443
+CONNECTED(00000003)
+140735260259168:error:140790E5:SSL routines:SSL23_WRITE:ssl handshake failure:s23_lib.c:177:
+---
+no peer certificate available
+---
+No client certificate CA names sent
+---
+SSL handshake has read 0 bytes and written 320 bytes
+---
+New, (NONE), Cipher is (NONE)
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+---
+```
+```
+# nmap -sV -p 80,443,22,8080,2022 auth.irissmarthome.com
+
+Starting Nmap 5.21 ( http://nmap.org ) at 2015-01-16 11:35 EST
+Nmap scan report for auth.irissmarthome.com (184.106.86.180)
+Host is up (0.046s latency).
+PORT     STATE    SERVICE    VERSION
+22/tcp   filtered ssh
+80/tcp   filtered http
+443/tcp  open     ssl/https?
+2022/tcp filtered down
+8080/tcp filtered http-proxy
+
+Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 94.73 seconds
+```
+```
+$ openssl s_client -showcerts -connect auth.irissmarthome.com:443
+CONNECTED(00000003)
+depth=0 C = GB, OU = Server certification, CN = auth.irissmarthome.com, ST = Cambridgeshire
+verify error:num=20:unable to get local issuer certificate
+verify return:1
+depth=0 C = GB, OU = Server certification, CN = auth.irissmarthome.com, ST = Cambridgeshire
+verify error:num=27:certificate not trusted
+verify return:1
+depth=0 C = GB, OU = Server certification, CN = auth.irissmarthome.com, ST = Cambridgeshire
+verify error:num=21:unable to verify the first certificate
+verify return:1
+---
+Certificate chain
+ 0 s:/C=GB/OU=Server certification/CN=auth.irissmarthome.com/ST=Cambridgeshire
+   i:/C=US/CN=ca.irissmarthome.com/L=Mooresville/O=Lowe's Companies Inc./ST=North Carolina/OU=IT
+-----BEGIN CERTIFICATE-----
+MIICpzCCAhACAQEwDQYJKoZIhvcNAQEFBQAwgYgxCzAJBgNVBAYTAlVTMR0wGwYD
+VQQDExRjYS5pcmlzc21hcnRob21lLmNvbTEUMBIGA1UEBxMLTW9vcmVzdmlsbGUx
+HjAcBgNVBAoTFUxvd2UncyBDb21wYW5pZXMgSW5jLjEXMBUGA1UECBMOTm9ydGgg
+Q2Fyb2xpbmExCzAJBgNVBAsTAklUMB4XDTEyMDYxNTE4NTYzOFoXDTIyMDYxMzE4
+NTYzOFowZjELMAkGA1UEBhMCR0IxHTAbBgNVBAsTFFNlcnZlciBjZXJ0aWZpY2F0
+aW9uMR8wHQYDVQQDExZhdXRoLmlyaXNzbWFydGhvbWUuY29tMRcwFQYDVQQIEw5D
+YW1icmlkZ2VzaGlyZTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAw/2/vT1T
+Uq0MTnWOCQh6C3VoXP3OUlcWTxYRM0tpX9HccTwIUKQLHCVm4yN3IaGJ2ABruf6r
+f7pTpUqevBeRfnqbe24VUcytfuin41QyHZPGzzoj7LRz+kZOMOK1a/A9OoB+qHtk
+HK9/qscYaf7pH8ZsDdaziCeGsNp8rIPNcnMCAwEAAaNHMEUwEQYDMAcFBAoWCGly
+aXNob21lMDAGAzAHAAQpFidPZmZpY2lhbCBBbGVydE1lLmNvbSBTZXJ2ZXIgQ2Vy
+dGlmaWNhdGUwDQYJKoZIhvcNAQEFBQADgYEAdWdTDIZXCCYuznzos57NQgmei+UO
+H+U80z5N8A5oqn7a2vRDUSyC7CGk0P8+NpS13mRT+NlIexQJ1tYSKFNt3ai22S9+
+cS4wpTiMlXzMjDTP1nFSd07z9Cq21VFVa8DJA/2vdk5MtZbhwQwZeegINlMpjX79
+hr0FISgSJfXQnO0=
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=/C=GB/OU=Server certification/CN=auth.irissmarthome.com/ST=Cambridgeshire
+issuer=/C=US/CN=ca.irissmarthome.com/L=Mooresville/O=Lowe's Companies Inc./ST=North Carolina/OU=IT
+---
+No client certificate CA names sent
+---
+SSL handshake has read 999 bytes and written 518 bytes
+---
+New, TLSv1/SSLv3, Cipher is AES256-SHA
+Server public key is 1024 bit
+Secure Renegotiation IS supported
+Compression: zlib compression
+Expansion: zlib compression
+SSL-Session:
+    Protocol  : TLSv1
+    Cipher    : AES256-SHA
+    Session-ID: 9D4D764119D632D5254926B4803167E9F42903802A6D5B112A7A1B8C1CE3C5A6
+    Session-ID-ctx:
+    Master-Key: 64F4C6E4976047978E7E8A678F2FEA16B0BF90A7C7E559DCD2AD052A6FD78A4297FD7F50BBA307E4BEBA501B93D49DA6
+    Key-Arg   : None
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket:
+    0000 - 7f 52 cd b6 8e 21 6d 80-ed b8 a1 cc 9a 86 8e e3   .R...!m.........
+    0010 - 8d d1 2f 4d 10 9a 1c d0-c1 68 08 d1 c4 e6 87 f6   ../M.....h......
+    0020 - aa a6 8b 9f 2a 59 7f cd-ec f6 c5 eb 67 ed cc 37   ....*Y......g..7
+    0030 - a4 1a 40 89 95 dd 5e 72-6a 73 29 5e 0d b1 41 7c   ..@...^rjs)^..A|
+    0040 - 02 3e f8 54 97 a1 49 d1-1d 03 a9 74 38 a7 27 40   .>.T..I....t8.'@
+    0050 - f2 61 e6 a6 e1 e8 1a 8c-18 0d dc 12 4b 15 49 8e   .a..........K.I.
+    0060 - 67 e7 3e 15 69 45 cb 5d-e0 99 77 9c 40 9c b2 d9   g.>.iE.]..w.@...
+    0070 - ae f9 91 8d 5d 03 b5 f4-14 f5 05 9e c2 28 25 41   ....]........(%A
+    0080 - 01 88 b4 8b 56 be b1 ed-3e e2 20 2e 21 0a 75 b6   ....V...>. .!.u.
+    0090 - 28 31 d5 90 03 e2 1e a0-d8 6a c1 d5 aa e9 3c fa   (1.......j....<.
+
+    Compression: 1 (zlib compression)
+    Start Time: 1421426324
+    Timeout   : 300 (sec)
+    Verify return code: 21 (unable to verify the first certificate)
+---
+```
+```
+# nmap -sV -p 80,443,22,8080,2022 www.irissmarthome.com
+
+Starting Nmap 5.21 ( http://nmap.org ) at 2015-01-16 10:45 EST
+Nmap scan report for www.irissmarthome.com (184.106.86.184)
+Host is up (0.046s latency).
+PORT     STATE    SERVICE    VERSION
+22/tcp   filtered ssh
+80/tcp   open     http       Apache httpd
+443/tcp  open     ssl/http   Apache httpd
+2022/tcp filtered down
+8080/tcp filtered http-proxy
+
+Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 14.37 seconds
+```
+```
+$ openssl s_client -showcerts -connect www.irissmarthome.com:443
+CONNECTED(00000003)
+depth=2 O = Entrust.net, OU = www.entrust.net/CPS_2048 incorp. by ref. (limits liab.), OU = (c) 1999 Entrust.net Limited, CN = Entrust.net Certification Authority (2048)
+verify error:num=19:self signed certificate in certificate chain
+verify return:0
+---
+Certificate chain
+ 0 s:/C=US/ST=North Carolina/L=North Wilkesboro/O=Lowes Companies Inc/CN=www.irissmarthome.com
+   i:/C=US/O=Entrust, Inc./OU=www.entrust.net/rpa is incorporated by reference/OU=(c) 2009 Entrust, Inc./CN=Entrust Certification Authority - L1C
+-----BEGIN CERTIFICATE-----
+MIIFIjCCBAqgAwIBAgIETB0rkzANBgkqhkiG9w0BAQUFADCBsTELMAkGA1UEBhMC
+VVMxFjAUBgNVBAoTDUVudHJ1c3QsIEluYy4xOTA3BgNVBAsTMHd3dy5lbnRydXN0
+Lm5ldC9ycGEgaXMgaW5jb3Jwb3JhdGVkIGJ5IHJlZmVyZW5jZTEfMB0GA1UECxMW
+KGMpIDIwMDkgRW50cnVzdCwgSW5jLjEuMCwGA1UEAxMlRW50cnVzdCBDZXJ0aWZp
+Y2F0aW9uIEF1dGhvcml0eSAtIEwxQzAeFw0xMjA2MTgxNjA5NTRaFw0xNjA4MTkw
+MTAzMTNaMH8xCzAJBgNVBAYTAlVTMRcwFQYDVQQIEw5Ob3J0aCBDYXJvbGluYTEZ
+MBcGA1UEBxMQTm9ydGggV2lsa2VzYm9ybzEcMBoGA1UEChMTTG93ZXMgQ29tcGFu
+aWVzIEluYzEeMBwGA1UEAxMVd3d3LmlyaXNzbWFydGhvbWUuY29tMIIBIjANBgkq
+hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxOQg/CUoj0NDk4ChZQn5+haPvbQ1Z2uo
+qvDuobLZQvliwoo+ehlKVMEdshdj/JcJuggnE2iTqezEuXba/2F9UicVL56ZVmzE
+cPiYYmUcH7yaLsl3ATkd1SJZIoP2haNfNselWemhOBdfvntb/q8GdEg9bRhoOKNK
+lEcOQpEVf73/YKPxjBAznw86IFErNqPUmIS3SLvoGmIeC7J30UlA+OMWwCt5+Ayr
+Hyig1UiM7EVtVuxyAl1W2sBY20IuIdLrYsu306pQLhCdYMTd3FWke8wYSlKJF0cG
+ecfzfv70QhZ+7lzA86l6Yk+/Wa6zifaovkkctZI3U64yJKRQhCuyxwIDAQABo4IB
+cTCCAW0wCwYDVR0PBAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMDMGA1UdHwQs
+MCowKKAmoCSGImh0dHA6Ly9jcmwuZW50cnVzdC5uZXQvbGV2ZWwxYy5jcmwwZQYI
+KwYBBQUHAQEEWTBXMCMGCCsGAQUFBzABhhdodHRwOi8vb2NzcC5lbnRydXN0Lm5l
+dDAwBggrBgEFBQcwAoYkaHR0cDovL2FpYS5lbnRydXN0Lm5ldC9sMWMtY2hhaW4u
+Y2VyMEAGA1UdIAQ5MDcwNQYJKoZIhvZ9B0sCMCgwJgYIKwYBBQUHAgEWGmh0dHA6
+Ly93d3cuZW50cnVzdC5uZXQvcnBhMCAGA1UdEQQZMBeCFXd3dy5pcmlzc21hcnRo
+b21lLmNvbTAfBgNVHSMEGDAWgBQe8auJBvhJDwEzd+4Ueu4ZfJMoTTAdBgNVHQ4E
+FgQUh36gRr0EczHFNKTn3a7b1j230SUwCQYDVR0TBAIwADANBgkqhkiG9w0BAQUF
+AAOCAQEAk6V1w2a2/4uZmvRLH05OpIbVU4gAqPuhmd31sVbxB9MxnM9lWySyUl2v
+/aR1O04QnGhqFk5KluWlcXszhjHAywMVCHKRpe+vwvOJBSOIaQCrgZWBUWkZd7E0
+leugiaLfbRv0+r9PirtxjsUVs05rZXEIZPji6BeveKe3N4SUZgHeNYnuEwbLJ9gj
+08w9aW8loWgHckodEwMj8MWl8HwcKErKYuCBH9rgdhi7uWePGMQqO8iReKcPMgIh
+fzkTTp/1FQ5oZTuWPCG6PMa9+wccJnkoQeqmPgFZUVircP1YBR0dK90sVSGt4jUy
+G1Di3H8YngeRaSA5j4HXGHUoRLnUlQ==
+-----END CERTIFICATE-----
+ 1 s:/C=US/O=Entrust, Inc./OU=www.entrust.net/rpa is incorporated by reference/OU=(c) 2009 Entrust, Inc./CN=Entrust Certification Authority - L1C
+   i:/O=Entrust.net/OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.)/OU=(c) 1999 Entrust.net Limited/CN=Entrust.net Certification Authority (2048)
+-----BEGIN CERTIFICATE-----
+MIIE8jCCA9qgAwIBAgIEOGPp/DANBgkqhkiG9w0BAQUFADCBtDEUMBIGA1UEChML
+RW50cnVzdC5uZXQxQDA+BgNVBAsUN3d3dy5lbnRydXN0Lm5ldC9DUFNfMjA0OCBp
+bmNvcnAuIGJ5IHJlZi4gKGxpbWl0cyBsaWFiLikxJTAjBgNVBAsTHChjKSAxOTk5
+IEVudHJ1c3QubmV0IExpbWl0ZWQxMzAxBgNVBAMTKkVudHJ1c3QubmV0IENlcnRp
+ZmljYXRpb24gQXV0aG9yaXR5ICgyMDQ4KTAeFw0wOTEyMTAyMDQzNTRaFw0xOTEy
+MTAyMTEzNTRaMIGxMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNRW50cnVzdCwgSW5j
+LjE5MDcGA1UECxMwd3d3LmVudHJ1c3QubmV0L3JwYSBpcyBpbmNvcnBvcmF0ZWQg
+YnkgcmVmZXJlbmNlMR8wHQYDVQQLExYoYykgMjAwOSBFbnRydXN0LCBJbmMuMS4w
+LAYDVQQDEyVFbnRydXN0IENlcnRpZmljYXRpb24gQXV0aG9yaXR5IC0gTDFDMIIB
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl6MtPJ7eBdoTwhGNnY7jf8dL
+flqfs/9iq3PIKGu6EGSChxPNVxj/KM7A5g4GkVApg9Hywyrb2NtOBMwA64u2lty8
+qvpSdwTB2xnkrpz9PIsD7028GgNl+cGxP3KG8jiqGa4QiHgo2nXDPQKCApy5wWV3
+diRMmPdtMTj72/7bNwJ2oRiXpszeIAlJNiRpQvbkN2LxWW2pPO00nKOO29w61/cK
+b+8u2NWTWnrtCElo4kHjWpDBhlX8UUOd4LLEZ7TLMjEl8FSfS9Fv29Td/K9ebHiQ
+ld7KOki5eTybGdZ1BaD5iNfB6KUJ5BoV3IcjqrJ1jGMlh9j4PabCzGb/pWZoVQID
+AQABo4IBCzCCAQcwDgYDVR0PAQH/BAQDAgEGMA8GA1UdEwEB/wQFMAMBAf8wMwYI
+KwYBBQUHAQEEJzAlMCMGCCsGAQUFBzABhhdodHRwOi8vb2NzcC5lbnRydXN0Lm5l
+dDAyBgNVHR8EKzApMCegJaAjhiFodHRwOi8vY3JsLmVudHJ1c3QubmV0LzIwNDhj
+YS5jcmwwOwYDVR0gBDQwMjAwBgRVHSAAMCgwJgYIKwYBBQUHAgEWGmh0dHA6Ly93
+d3cuZW50cnVzdC5uZXQvcnBhMB0GA1UdDgQWBBQe8auJBvhJDwEzd+4Ueu4ZfJMo
+TTAfBgNVHSMEGDAWgBRV5IHREYC+2Im5CKMx+aEkCRa5cDANBgkqhkiG9w0BAQUF
+AAOCAQEAB/ZfgoR/gEDHkDRGQiQDzi+ruoOeJXMN7awFacaH7aNc8lfBsUl2mk3y
+P93kDv4LPrmY2TKVHTL0Ae6cyMjlP+BTdmL83attPZSQ8sCzPJgnNl4olyL8G0DT
+Kw2ttVdt3w/jS+9zAhBl+hvQrDHV4w/oujIwg+5K0L/fIpB6vuw6G8RJBB3xroB3
+PEII26c7KKaAAQPmOaPr34BZG/MsvtxyRHmgbAelbU1EjkJoypR8Lja6hZ7NqsRe
+PFS+/i/qaZ0cHimbltjI/lGQ8SSmkAaz8Cmi/3gud1xFIdlEADHzvjJP9QoyDfz8
+uhZ2VrLWSJLyi6Y+t6xcaeoLP2ZFuQ==
+-----END CERTIFICATE-----
+ 2 s:/O=Entrust.net/OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.)/OU=(c) 1999 Entrust.net Limited/CN=Entrust.net Certification Authority (2048)
+   i:/O=Entrust.net/OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.)/OU=(c) 1999 Entrust.net Limited/CN=Entrust.net Certification Authority (2048)
+-----BEGIN CERTIFICATE-----
+MIIEXDCCA0SgAwIBAgIEOGO5ZjANBgkqhkiG9w0BAQUFADCBtDEUMBIGA1UEChML
+RW50cnVzdC5uZXQxQDA+BgNVBAsUN3d3dy5lbnRydXN0Lm5ldC9DUFNfMjA0OCBp
+bmNvcnAuIGJ5IHJlZi4gKGxpbWl0cyBsaWFiLikxJTAjBgNVBAsTHChjKSAxOTk5
+IEVudHJ1c3QubmV0IExpbWl0ZWQxMzAxBgNVBAMTKkVudHJ1c3QubmV0IENlcnRp
+ZmljYXRpb24gQXV0aG9yaXR5ICgyMDQ4KTAeFw05OTEyMjQxNzUwNTFaFw0xOTEy
+MjQxODIwNTFaMIG0MRQwEgYDVQQKEwtFbnRydXN0Lm5ldDFAMD4GA1UECxQ3d3d3
+LmVudHJ1c3QubmV0L0NQU18yMDQ4IGluY29ycC4gYnkgcmVmLiAobGltaXRzIGxp
+YWIuKTElMCMGA1UECxMcKGMpIDE5OTkgRW50cnVzdC5uZXQgTGltaXRlZDEzMDEG
+A1UEAxMqRW50cnVzdC5uZXQgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkgKDIwNDgp
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArU1LqRKGsuqjIAcVFmQq
+K0vRvwtKTY7tgHalZ7d4QMBzQshowNtTK91euHaYNZOLGp18EzoOH1u3Hs/lJBQe
+sYGpjX24zGtLA/ECDNyrpUAkAH90lKGdCCmziAv1h3edVc3kw37XamSrhRSGlVuX
+MlBvPci6Zgzj/L24ScF2iUkZ/cCovYmjZy/Gn7xxGWC4LeksyZB2ZnuU4q941mVT
+XTzWnLLPKQP5L6RQstRIzgUyVYr9smRMDuSYB3Xbf9+5CFVghTAp+XtIpGmG4zU/
+HoZdenoVve8AjhUiVBcAkCaTvA5JaJG/+EfTnZVCwQ5N328mz8MYIWJmQ3DW1cAH
+4QIDAQABo3QwcjARBglghkgBhvhCAQEEBAMCAAcwHwYDVR0jBBgwFoAUVeSB0RGA
+vtiJuQijMfmhJAkWuXAwHQYDVR0OBBYEFFXkgdERgL7YibkIozH5oSQJFrlwMB0G
+CSqGSIb2fQdBAAQQMA4bCFY1LjA6NC4wAwIEkDANBgkqhkiG9w0BAQUFAAOCAQEA
+WUesIYSKF8mciVMeuoCFGsY8Tj6xnLZ8xpJdGGQC49MGCBFhfGPjK50xA3B20qMo
+oPS7mmNz7W3lKtvtFKkrxjYR0CvrB4ul2p5cGZ1WEvVUKcgF7bISKo30Axv/55IQ
+h7A6tcOdBTcSo8f0FbnVpDkWm1M6I5HxqIKiaohowXkCIryqptau37AUX7iH0N18
+f3v/rxzP5tsHrV7bhZ3QKw0z2wTR5klAEyt2+z7pnIkPFc4YsIV4IU9rTw76NmfN
+B/L/CNDi3tm/Kq+4h4YhPATKt5Rof8886ZjXOP/swNlQ8C5LWK5Gb9Auw2DaclVy
+vUxFnmG6v4SBkgPR0ml8xQ==
+-----END CERTIFICATE-----
+ 3 s:/C=US/O=Entrust, Inc./OU=www.entrust.net/rpa is incorporated by reference/OU=(c) 2009 Entrust, Inc./CN=Entrust Certification Authority - L1C
+   i:/O=Entrust.net/OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.)/OU=(c) 1999 Entrust.net Limited/CN=Entrust.net Certification Authority (2048)
+-----BEGIN CERTIFICATE-----
+MIIE9TCCA92gAwIBAgIETA6MOTANBgkqhkiG9w0BAQUFADCBtDEUMBIGA1UEChML
+RW50cnVzdC5uZXQxQDA+BgNVBAsUN3d3dy5lbnRydXN0Lm5ldC9DUFNfMjA0OCBp
+bmNvcnAuIGJ5IHJlZi4gKGxpbWl0cyBsaWFiLikxJTAjBgNVBAsTHChjKSAxOTk5
+IEVudHJ1c3QubmV0IExpbWl0ZWQxMzAxBgNVBAMTKkVudHJ1c3QubmV0IENlcnRp
+ZmljYXRpb24gQXV0aG9yaXR5ICgyMDQ4KTAeFw0xMTExMTExNTQwNDBaFw0yMTEx
+MTIwMjUxMTdaMIGxMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNRW50cnVzdCwgSW5j
+LjE5MDcGA1UECxMwd3d3LmVudHJ1c3QubmV0L3JwYSBpcyBpbmNvcnBvcmF0ZWQg
+YnkgcmVmZXJlbmNlMR8wHQYDVQQLExYoYykgMjAwOSBFbnRydXN0LCBJbmMuMS4w
+LAYDVQQDEyVFbnRydXN0IENlcnRpZmljYXRpb24gQXV0aG9yaXR5IC0gTDFDMIIB
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl6MtPJ7eBdoTwhGNnY7jf8dL
+flqfs/9iq3PIKGu6EGSChxPNVxj/KM7A5g4GkVApg9Hywyrb2NtOBMwA64u2lty8
+qvpSdwTB2xnkrpz9PIsD7028GgNl+cGxP3KG8jiqGa4QiHgo2nXDPQKCApy5wWV3
+diRMmPdtMTj72/7bNwJ2oRiXpszeIAlJNiRpQvbkN2LxWW2pPO00nKOO29w61/cK
+b+8u2NWTWnrtCElo4kHjWpDBhlX8UUOd4LLEZ7TLMjEl8FSfS9Fv29Td/K9ebHiQ
+ld7KOki5eTybGdZ1BaD5iNfB6KUJ5BoV3IcjqrJ1jGMlh9j4PabCzGb/pWZoVQID
+AQABo4IBDjCCAQowDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQAw
+MwYIKwYBBQUHAQEEJzAlMCMGCCsGAQUFBzABhhdodHRwOi8vb2NzcC5lbnRydXN0
+Lm5ldDAyBgNVHR8EKzApMCegJaAjhiFodHRwOi8vY3JsLmVudHJ1c3QubmV0LzIw
+NDhjYS5jcmwwOwYDVR0gBDQwMjAwBgRVHSAAMCgwJgYIKwYBBQUHAgEWGmh0dHA6
+Ly93d3cuZW50cnVzdC5uZXQvcnBhMB0GA1UdDgQWBBQe8auJBvhJDwEzd+4Ueu4Z
+fJMoTTAfBgNVHSMEGDAWgBRV5IHREYC+2Im5CKMx+aEkCRa5cDANBgkqhkiG9w0B
+AQUFAAOCAQEAQJqHfojUzCanS/p4SiDV+aI2IbvuW6BPRI3PqvmXF5aEqchnm7vm
+EN551lZqpHgUSdl87TBeaeptJEZaiDQ9JifPaUGEHATaGTgu24lBOX5lH51aOszh
+DEw3oc5gk6i1jMo/uitdTBuBiXrKNjCc/4Tj/jrx93lxybXTMwPKd86wuinSNF1z
+/6T98iW4NUV5eh+Xrsm+CmiEmXQ5qE56JvXN3iXiN4VlB6fKxQW3EzgNLfBtGc7e
+mWEn7kVuxzn/9sWL4Mt8ih7VegcxKlJcOlAZOKlE+jyoz+95nWrZ5S6hjyko1+yq
+wfsm5p9GJKaxB825DOgNghYAHZaS/KYIoA==
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=/C=US/ST=North Carolina/L=North Wilkesboro/O=Lowes Companies Inc/CN=www.irissmarthome.com
+issuer=/C=US/O=Entrust, Inc./OU=www.entrust.net/rpa is incorporated by reference/OU=(c) 2009 Entrust, Inc./CN=Entrust Certification Authority - L1C
+---
+No client certificate CA names sent
+---
+SSL handshake has read 5868 bytes and written 518 bytes
+---
+New, TLSv1/SSLv3, Cipher is DHE-RSA-AES256-SHA
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+SSL-Session:
+    Protocol  : TLSv1
+    Cipher    : DHE-RSA-AES256-SHA
+    Session-ID: 94B10C15F8B675104AC5BCC81FAD3CFBB90ACB2BD5CB0A1CD31865660C94E6FE
+    Session-ID-ctx:
+    Master-Key: 7E724D678C1321D056BCF3C0205922E68B0E4206732F1228F7677F0207E37FE52AD7B90176F0FA7DF7A0ED553146E7EA
+    Key-Arg   : None
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket:
+    0000 - 54 af 46 c2 2d fa e7 1c-c1 98 8e 70 15 6a 2d 38   T.F.-......p.j-8
+    0010 - f7 fe 3d da d4 b6 5a 25-e2 44 e4 fd 6a d2 51 6c   ..=...Z%.D..j.Ql
+    0020 - ea db 6b 25 aa 4c 9d 85-f5 87 8c 39 34 55 f0 c2   ..k%.L.....94U..
+    0030 - c8 e6 2e c8 4d 59 f0 00-d4 f7 bd 5b 9a a0 94 fc   ....MY.....[....
+    0040 - 48 f9 88 da 12 a0 fb 93-d3 e8 95 a3 ec 9d e6 70   H..............p
+    0050 - 1f 27 aa 85 09 c5 90 91-6a 29 f1 69 cf e4 02 53   .'......j).i...S
+    0060 - d5 ff 35 d0 de 41 57 06-66 dd 81 8e 3b 1c 69 04   ..5..AW.f...;.i.
+    0070 - 9c 66 f7 79 86 0a 61 a9-71 c9 7c 71 3a 24 70 46   .f.y..a.q.|q:$pF
+    0080 - 1a 20 a7 cc 0e ba 38 c3-00 e7 b9 0c 9d d8 04 9a   . ....8.........
+    0090 - 67 24 1f c2 3c e0 24 d7-46 2d e8 c7 f7 b2 4b 64   g$..<.$.F-....Kd
+    00a0 - be 0f bb 96 84 34 5d 67-4a dc 56 1e 40 97 b3 03   .....4]gJ.V.@...
+    00b0 - a2 db d5 ed 07 5f 7c c8-8b 9a 3e ee 42 74 4a ef   ....._|...>.BtJ.
+
+    Start Time: 1421423212
+    Timeout   : 300 (sec)
+    Verify return code: 19 (self signed certificate in certificate chain)
+---
+```
+```
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1276980115 (0x4c1d2b93)
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, O=Entrust, Inc., OU=www.entrust.net/rpa is incorporated by reference, OU=(c) 2009 Entrust, Inc., CN=Entrust Certification Authority - L1C
+        Validity
+            Not Before: Jun 18 16:09:54 2012 GMT
+            Not After : Aug 19 01:03:13 2016 GMT
+        Subject: C=US, ST=North Carolina, L=North Wilkesboro, O=Lowes Companies Inc, CN=www.irissmarthome.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:c4:e4:20:fc:25:28:8f:43:43:93:80:a1:65:09:
+                    f9:fa:16:8f:bd:b4:35:67:6b:a8:aa:f0:ee:a1:b2:
+                    d9:42:f9:62:c2:8a:3e:7a:19:4a:54:c1:1d:b2:17:
+                    63:fc:97:09:ba:08:27:13:68:93:a9:ec:c4:b9:76:
+                    da:ff:61:7d:52:27:15:2f:9e:99:56:6c:c4:70:f8:
+                    98:62:65:1c:1f:bc:9a:2e:c9:77:01:39:1d:d5:22:
+                    59:22:83:f6:85:a3:5f:36:c7:a5:59:e9:a1:38:17:
+                    5f:be:7b:5b:fe:af:06:74:48:3d:6d:18:68:38:a3:
+                    4a:94:47:0e:42:91:15:7f:bd:ff:60:a3:f1:8c:10:
+                    33:9f:0f:3a:20:51:2b:36:a3:d4:98:84:b7:48:bb:
+                    e8:1a:62:1e:0b:b2:77:d1:49:40:f8:e3:16:c0:2b:
+                    79:f8:0c:ab:1f:28:a0:d5:48:8c:ec:45:6d:56:ec:
+                    72:02:5d:56:da:c0:58:db:42:2e:21:d2:eb:62:cb:
+                    b7:d3:aa:50:2e:10:9d:60:c4:dd:dc:55:a4:7b:cc:
+                    18:4a:52:89:17:47:06:79:c7:f3:7e:fe:f4:42:16:
+                    7e:ee:5c:c0:f3:a9:7a:62:4f:bf:59:ae:b3:89:f6:
+                    a8:be:49:1c:b5:92:37:53:ae:32:24:a4:50:84:2b:
+                    b2:c7
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage:
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage:
+                TLS Web Server Authentication
+            X509v3 CRL Distribution Points:
+
+                Full Name:
+                  URI:http://crl.entrust.net/level1c.crl
+
+            Authority Information Access:
+                OCSP - URI:http://ocsp.entrust.net
+                CA Issuers - URI:http://aia.entrust.net/l1c-chain.cer
+
+            X509v3 Certificate Policies:
+                Policy: 1.2.840.113533.7.75.2
+                  CPS: http://www.entrust.net/rpa
+
+            X509v3 Subject Alternative Name:
+                DNS:www.irissmarthome.com
+            X509v3 Authority Key Identifier:
+                keyid:1E:F1:AB:89:06:F8:49:0F:01:33:77:EE:14:7A:EE:19:7C:93:28:4D
+
+            X509v3 Subject Key Identifier:
+                87:7E:A0:46:BD:04:73:31:C5:34:A4:E7:DD:AE:DB:D6:3D:B7:D1:25
+            X509v3 Basic Constraints:
+                CA:FALSE
+    Signature Algorithm: sha1WithRSAEncryption
+         93:a5:75:c3:66:b6:ff:8b:99:9a:f4:4b:1f:4e:4e:a4:86:d5:
+         53:88:00:a8:fb:a1:99:dd:f5:b1:56:f1:07:d3:31:9c:cf:65:
+         5b:24:b2:52:5d:af:fd:a4:75:3b:4e:10:9c:68:6a:16:4e:4a:
+         96:e5:a5:71:7b:33:86:31:c0:cb:03:15:08:72:91:a5:ef:af:
+         c2:f3:89:05:23:88:69:00:ab:81:95:81:51:69:19:77:b1:34:
+         95:eb:a0:89:a2:df:6d:1b:f4:fa:bf:4f:8a:bb:71:8e:c5:15:
+         b3:4e:6b:65:71:08:64:f8:e2:e8:17:af:78:a7:b7:37:84:94:
+         66:01:de:35:89:ee:13:06:cb:27:d8:23:d3:cc:3d:69:6f:25:
+         a1:68:07:72:4a:1d:13:03:23:f0:c5:a5:f0:7c:1c:28:4a:ca:
+         62:e0:81:1f:da:e0:76:18:bb:b9:67:8f:18:c4:2a:3b:c8:91:
+         78:a7:0f:32:02:21:7f:39:13:4e:9f:f5:15:0e:68:65:3b:96:
+         3c:21:ba:3c:c6:bd:fb:07:1c:26:79:28:41:ea:a6:3e:01:59:
+         51:58:ab:70:fd:58:05:1d:1d:2b:dd:2c:55:21:ad:e2:35:32:
+         1b:50:e2:dc:7f:18:9e:07:91:69:20:39:8f:81:d7:18:75:28:
+         44:b9:d4:95
+```
+
+### alertme.com
+
+```
+Domain Name: ALERTME.COM
+Registry Domain ID:
+Registrar WHOIS Server: whois.networksolutions.com
+Registrar URL: http://networksolutions.com
+Updated Date: 2012-05-08T12:00:59Z
+Creation Date: 2006-02-27T08:10:40Z
+Registrar Registration Expiration Date: 2016-04-05T04:00:00Z
+Registrar: NETWORK SOLUTIONS, LLC.
+Registrar IANA ID: 2
+Registrar Abuse Contact Email: abuse@web.com
+Registrar Abuse Contact Phone: +1.8003337680
+Reseller:
+Domain Status: clientTransferProhibited
+Registry Registrant ID:
+Registrant Name: AlertMe.com Limited
+Registrant Organization: AlertMe.com Limited
+Registrant Street: 30 Station Road
+Registrant City: Cambridge
+Registrant State/Province: Cambridgeshire
+Registrant Postal Code: CB1 2RE
+Registrant Country: UK
+Registrant Phone: +44.1223222150
+Registrant Phone Ext:
+Registrant Fax: +44.1223361557
+Registrant Fax Ext:
+Registrant Email: domain@alertme.com
+Registry Admin ID:
+Admin Name: Easton, Craig
+Admin Organization: AlertMe.com Limited
+Admin Street: 30 Station Road
+Admin City: Cambridge
+Admin State/Province: Cambridgeshire
+Admin Postal Code: CB1 2RE
+Admin Country: UK
+Admin Phone: +44.1223222150
+Admin Phone Ext:
+Admin Fax: +44.1223361557
+Admin Fax Ext:
+Admin Email: domain@alertme.com
+Registry Tech ID:
+Tech Name: Easton, Craig
+Tech Organization: AlertMe.com Limited
+Tech Street: 30 Station Road
+Tech City: Cambridge
+Tech State/Province: Cambridgeshire
+Tech Postal Code: CB1 2RE
+Tech Country: UK
+Tech Phone: +44.1223222150
+Tech Phone Ext:
+Tech Fax: +44.1223361557
+Tech Fax Ext:
+Tech Email: domain@alertme.com
+Name Server: NS2.ALERTME.COM
+Name Server: NSE1.ALERTME.COM
+Name Server: NS1.ALERTME.COM
+Name Server: NSE2.ALERTME.COM
+DNSSEC: not signed
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of whois database: Fri, 16 Jan 2015 15:38:30 GMT <<<
+```
+
+### trinsictech.com
+
+* E-mail provider?
+> Flat-Fee Computer Support Services for small businesses in Austin, Houston and San Antonio.
+
+
+```
+Domain Name: TRINSICTECH.COM
+Registry Domain ID: 1535506249_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: http://www.godaddy.com
+Update Date: 2014-11-28T17:16:54Z
+Creation Date: 2008-12-30T22:17:48Z
+Registrar Registration Expiration Date: 2016-12-30T22:17:48Z
+Registrar: GoDaddy.com, LLC
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.480-624-2505
+Domain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited http://www.icann.org/epp#clientUpdateProhibited
+Domain Status: clientRenewProhibited http://www.icann.org/epp#clientRenewProhibited
+Domain Status: clientDeleteProhibited http://www.icann.org/epp#clientDeleteProhibited
+Registry Registrant ID:
+Registrant Name: Administrator Administrator
+Registrant Organization: Diamond IT Services, Inc.
+Registrant Street: PO Box 105
+Registrant City: Bastrop
+Registrant State/Province: Texas
+Registrant Postal Code: 78602
+Registrant Country: United States
+Registrant Phone: (512) 215-4140
+Registrant Phone Ext:
+Registrant Fax:
+Registrant Fax Ext:
+Registrant Email: btriem@diamonditservices.com
+Registry Admin ID:
+Admin Name: Brad Triem
+Admin Organization: Trinsic Technologies
+Admin Street: PO Box 105
+Admin City: Bastrop
+Admin State/Province: Texas
+Admin Postal Code: 78602
+Admin Country: United States
+Admin Phone: (512) 215-4140
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email: btriem@diamonditservices.com
+Registry Tech ID:
+Tech Name: Administrator Administrator
+Tech Organization: Diamond IT Services, Inc.
+Tech Street: PO Box 105
+Tech City: Bastrop
+Tech State/Province: Texas
+Tech Postal Code: 78602
+Tech Country: United States
+Tech Phone: (512) 215-4140
+Tech Phone Ext:
+Tech Fax:
+Tech Fax Ext:
+Tech Email: btriem@diamonditservices.com
+Name Server: NS1.PREMIEREHOSTING.NET
+Name Server: NS3.TRINSICTECH.COM
+Name Server: NS.DIAMONDITSERVICES.COM
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+Last update of WHOIS database: 2015-01-16T15:00:00Z
+```
+
+# Jupiter Hub
+
+* http://forum.alertme.org.uk/viewtopic.php?f=4&t=97&start=10
+
+## Pre-upgrade
+
+* Appears to use Busybox 1.17.4
+  * Vulerable to CVE-2011-2716
+* Asks for NTP server, but doesn't send any requests for it when the option
+  is provided
+
+```
+Bootstrap Protocol
+    Message type: Boot Request (1)
+    Hardware type: Ethernet
+    Hardware address length: 6
+    Hops: 0
+    Transaction ID: 0xc1f46a10
+    Seconds elapsed: 0
+    Bootp flags: 0x0000 (Unicast)
+        0... .... .... .... = Broadcast flag: Unicast
+        .000 0000 0000 0000 = Reserved flags: 0x0000
+    Client IP address: 0.0.0.0 (0.0.0.0)
+    Your (client) IP address: 0.0.0.0 (0.0.0.0)
+    Next server IP address: 0.0.0.0 (0.0.0.0)
+    Relay agent IP address: 0.0.0.0 (0.0.0.0)
+    Client MAC address: AlertmeC_05:64:f4 (00:1c:2b:05:64:f4)
+    Client hardware address padding: 00000000000000000000
+    Server host name not given
+    Boot file name not given
+    Magic cookie: DHCP
+    Option: (t=53,l=1) DHCP Message Type = DHCP Request
+        Option: (53) DHCP Message Type
+        Length: 1
+        Value: 03
+    Option: (t=61,l=7) Client identifier
+        Option: (61) Client identifier
+        Length: 7
+        Value: 01001c2b0564f4
+        Hardware type: Ethernet
+        Client MAC address: AlertmeC_05:64:f4 (00:1c:2b:05:64:f4)
+    Option: (t=60,l=12) Vendor class identifier = "udhcp 1.17.4"
+        Option: (60) Vendor class identifier
+        Length: 12
+        Value: 756468637020312e31372e34
+    Option: (t=50,l=4) Requested IP Address = 192.168.99.99
+        Option: (50) Requested IP Address
+        Length: 4
+        Value: c0a86363
+    Option: (t=54,l=4) DHCP Server Identifier = 192.168.99.1
+        Option: (54) DHCP Server Identifier
+        Length: 4
+        Value: c0a86301
+    Option: (t=55,l=7) Parameter Request List
+        Option: (55) Parameter Request List
+        Length: 7
+        Value: 0103060c0f1c2a
+        1 = Subnet Mask
+        3 = Router
+        6 = Domain Name Server
+        12 = Host Name
+        15 = Domain Name
+        28 = Broadcast Address
+        42 = Network Time Protocol Servers
+    End Option
+```
+
+* Sends DNS requests for `imgserver.irissmarthome.com`:
+
+```
+  0.000000 192.168.99.99 -> 192.168.99.1 DHCP DHCP Release  - Transaction ID 0xef8dc5f
+  0.293414      0.0.0.0 -> 255.255.255.255 DHCP DHCP Discover - Transaction ID 0x1091b563
+  0.293765 192.168.99.1 -> 192.168.99.99 DHCP DHCP Offer    - Transaction ID 0x1091b563
+  0.295618      0.0.0.0 -> 255.255.255.255 DHCP DHCP Request  - Transaction ID 0x1091b563
+  0.297473 192.168.99.1 -> 192.168.99.99 DHCP DHCP ACK      - Transaction ID 0x1091b563
+  0.498407 AlertmeC_05:64:f4 -> Broadcast    ARP Who has 192.168.99.1?  Tell 192.168.99.99
+  0.498443 Lite-OnC_58:c6:7f -> AlertmeC_05:64:f4 ARP 192.168.99.1 is at 00:a0:cc:58:c6:7f
+  0.498818 192.168.99.99 -> 192.168.99.1 DNS Standard query A imgserver.irissmarthome.com
+  0.498955 192.168.99.1 -> 192.168.99.99 DNS Standard query response, Refused
+  5.502586 Lite-OnC_58:c6:7f -> AlertmeC_05:64:f4 ARP Who has 192.168.99.99?  Tell 192.168.99.1
+  5.503003 AlertmeC_05:64:f4 -> Lite-OnC_58:c6:7f ARP 192.168.99.99 is at 00:1c:2b:05:64:f4
+ 10.021332 192.168.99.99 -> 192.168.99.1 DHCP DHCP Release  - Transaction ID 0x9835f90d
+```
+
+* Refuses to connect to the default gateway when provided as imgserver.irissmarthome.com:
+
+```
+158.035617 192.168.99.99 -> 192.168.99.1 DNS Standard query A imgserver.irissmarthome.com
+158.035771 192.168.99.1 -> 192.168.99.99 DNS Standard query response A 192.168.99.1
+167.535906 192.168.99.99 -> 192.168.99.1 DHCP DHCP Release  - Transaction ID 0x20630264
+```
+
+* But does connect to a different host on the same subnet
+  * It also disconnects right away without sending anything:
+
+```
+ 19.689254 192.168.99.99 -> 192.168.99.1 DNS 87 Standard query A imgserver.irissmarthome.com
+ 19.689409 192.168.99.1 -> 192.168.99.99 DNS 103 Standard query response A 192.168.99.2
+ 19.724026 192.168.99.99 -> 192.168.99.2 TCP 74 36535 > 443 [SYN] Seq=0 Win=5840 Len=0 MSS=1460 SACK_PERM=1 TSval=4294938209 TSecr=0 WS=2
+ 19.724103 192.168.99.2 -> 192.168.99.99 TCP 74 443 > 36535 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 SACK_PERM=1 TSval=2895925 TSecr=4294938209 WS=64
+ 19.724688 192.168.99.99 -> 192.168.99.2 TCP 66 36535 > 443 [ACK] Seq=1 Ack=1 Win=5840 Len=0 TSval=4294938209 TSecr=2895925
+ 19.724937 192.168.99.99 -> 192.168.99.2 TCP 66 36535 > 443 [FIN, ACK] Seq=1 Ack=1 Win=5840 Len=0 TSval=4294938209 TSecr=2895925
+ 19.725002 192.168.99.2 -> 192.168.99.99 TCP 66 443 > 36535 [ACK] Seq=1 Ack=2 Win=14528 Len=0 TSval=2895925 TSecr=4294938209
+ 19.725059 192.168.99.2 -> 192.168.99.99 TCP 66 443 > 36535 [FIN, ACK] Seq=1 Ack=2 Win=14528 Len=0 TSval=2895925 TSecr=4294938209
+ 19.725633 192.168.99.99 -> 192.168.99.2 TCP 66 36535 > 443 [ACK] Seq=2 Ack=2 Win=5840 Len=0 TSval=4294938209 TSecr=2895925
+```
+```
+# nc -v -k -l 192.168.99.2 443
+Connection from 192.168.99.99 port 443 [tcp/https] accepted
+Connection from 192.168.99.99 port 443 [tcp/https] accepted
+```
+
+### TCP Port Scan
+
+```
+# nmap -sV -p0-65535 192.168.99.99
+
+Starting Nmap 5.21 ( http://nmap.org ) at 2015-01-16 10:02 EST
+Nmap scan report for 192.168.99.99
+Host is up (0.00042s latency).
+Not shown: 65535 closed ports
+PORT    STATE SERVICE VERSION
+111/tcp open  rpcbind
+MAC Address: 00:1C:2B:05:64:F4 (Alertme.com Limited)
+
+Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 315.54 seconds
+```
+```
+# rpcinfo -p 192.168.99.99
+   program vers proto   port  service
+    100000    2   tcp    111  portmapper
+    100000    2   udp    111  portmapper
+```
+
+### Partial UDP Port Scan
+
+```
+# nmap -sU 192.168.99.99
+
+Starting Nmap 5.21 ( http://nmap.org ) at 2015-01-16 10:21 EST
+Nmap scan report for 192.168.99.99
+Host is up (0.00055s latency).
+Not shown: 997 closed ports
+PORT      STATE         SERVICE
+111/udp   open          rpcbind
+1900/udp  open|filtered upnp
+41967/udp open|filtered unknown
+MAC Address: 00:1C:2B:05:64:F4 (Alertme.com Limited)
+
+Nmap done: 1 IP address (1 host up) scanned in 835.06 seconds
+```
+
+### Port 20405
+
+* Not sure what this is, but it is sent first thing when the device boots
+* Not assigned
+* Contains information about the OS and CPU
+
+```
+  0.000000      0.0.0.0 -> 255.255.255.255 UDP Source port: 20405  Destination port: 20405
+  0.056977      0.0.0.0 -> 255.255.255.255 DHCP DHCP Discover - Transaction ID 0xec0c1f1e
+  0.057344 192.168.99.1 -> 192.168.99.99 DHCP DHCP Offer    - Transaction ID 0xec0c1f1e
+  0.059125      0.0.0.0 -> 255.255.255.255 DHCP DHCP Request  - Transaction ID 0xec0c1f1e
+  0.070619 192.168.99.1 -> 192.168.99.99 DHCP DHCP ACK      - Transaction ID 0xec0c1f1e
+  0.193452 192.168.99.99 -> 255.255.255.255 UDP Source port: 20405  Destination port: 20405
+  5.080574 00:a0:cc:58:c6:7f -> 00:1c:2b:05:64:f4 ARP Who has 192.168.99.99?  Tell 192.168.99.1
+  6.080574 00:a0:cc:58:c6:7f -> 00:1c:2b:05:64:f4 ARP Who has 192.168.99.99?  Tell 192.168.99.1
+  7.080574 00:a0:cc:58:c6:7f -> 00:1c:2b:05:64:f4 ARP Who has 192.168.99.99?  Tell 192.168.99.1
+ 18.136363      0.0.0.0 -> 255.255.255.255 DHCP DHCP Discover - Transaction ID 0x90cc297e
+ 18.136771 192.168.99.1 -> 192.168.99.99 DHCP DHCP Offer    - Transaction ID 0x90cc297e
+ 18.150841      0.0.0.0 -> 255.255.255.255 DHCP DHCP Request  - Transaction ID 0x90cc297e
+ 18.162467 192.168.99.1 -> 192.168.99.99 DHCP DHCP ACK      - Transaction ID 0x90cc297e
+ 18.538927 00:1c:2b:05:64:f4 -> ff:ff:ff:ff:ff:ff ARP Who has 192.168.99.1?  Tell 192.168.99.99
+ 18.538963 00:a0:cc:58:c6:7f -> 00:1c:2b:05:64:f4 ARP 192.168.99.1 is at 00:a0:cc:58:c6:7f
+ 18.539374 192.168.99.99 -> 192.168.99.1 DNS Standard query A imgserver.irissmarthome.com
+ 18.539531 192.168.99.1 -> 192.168.99.99 DNS Standard query response A 192.168.99.1
+ 18.910640 192.168.99.99 -> 192.168.99.1 DHCP DHCP Release  - Transaction ID 0xbf6c564b
+```
+
+* 1st message:
+
+```
+$ nc -u -v -l 255.255.255.255 20405
+Connection from 0.0.0.0 port 20405 [udp/*] accepted
+HubFault:DHCP?
+```
+
+* 2nd message:
+  * CAKeysCrc...uh oh
+
+```
+Connection from 192.168.99.99 port 20405 [udp/*] accepted
+HubInfo:Type 0,Mk 6,Name JupiterHub,HubOS v1.29,HubOSCrc 4E435BC9,CAKeysCrc 127D5856,HubApp v3.4r21,MAC 00:1C:2B:05:64:F4,CPUID 9263009E,HubServer hubserver.irissmarthome.com:443,AuthServer auth.irissmarthome.com:443,ImgServer imgserver.irissmarthome.com:443,TstServer imgserver.irissmarthome.com:443,IP 192.168.99.99,EUI64 000D6F0002C38E3D
+```
+
+### Port 40000
+
+```
+# nc -v -l -u -k 192.168.99.1 40000
+Connection from 192.168.99.99 port 40000 [udp/*] accepted
+MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29
+...
+```
+
+### imgserver.irissmarthome.com:443
+
+* Shows up in above as `ImgServer` and `TstServer`
+
+### auth.irissmarthome.com:443
+
+* Shows up in above as `AuthServer`
+
+### hubserver.irissmarthome.com:443
+
+* Shows up in above as HubServer
+
