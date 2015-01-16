@@ -1,0 +1,14 @@
+# Hub
+
+## Cirrus Logic EP9302-CQZ
+
+![Photo](http://media.digikey.com/photos/Cirrus%20Logic%20Photos/MFG_EP9302%20Parts.jpg)
+
+* [EP9302 Datasheet](http://media.digikey.com/pdf/Data%20Sheets/Cirrus%20Logic%20PDFs/EP9302.pdf)
+* [EP9302 Prod Bulletin](http://www.cirrus.com/en/pubs/proBulletin/EP9302_PB.pdf)
+* [EP93xx Guide](http://www.cirrus.com/en/pubs/manual/EP93xx_Users_Guide_UM1.pdf)
+
+## Wolfson WM8510 Codec with Speaker Driver
+
+* [Web Site](http://www.wolfsonmicro.com/products/audio-hubs-(codecs)/mono-codecs/wm8510/)
+
