@@ -641,8 +641,8 @@ URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
 ### trinsictech.com
 
 * E-mail provider?
-> Flat-Fee Computer Support Services for small businesses in Austin, Houston and San Antonio.
 
+> Flat-Fee Computer Support Services for small businesses in Austin, Houston and San Antonio.
 
 ```
 Domain Name: TRINSICTECH.COM
@@ -714,7 +714,7 @@ Last update of WHOIS database: 2015-01-16T15:00:00Z
 ## Pre-upgrade
 
 * Appears to use Busybox 1.17.4
-  * Vulerable to CVE-2011-2716
+  * Vulerable to CVE-2011-2716 / CVE-2011-0997
 * Asks for NTP server, but doesn't send any requests for it when the option
   is provided
 
@@ -772,23 +772,6 @@ Bootstrap Protocol
         28 = Broadcast Address
         42 = Network Time Protocol Servers
     End Option
-```
-
-* Sends DNS requests for `imgserver.irissmarthome.com`:
-
-```
-  0.000000 192.168.99.99 -> 192.168.99.1 DHCP DHCP Release  - Transaction ID 0xef8dc5f
-  0.293414      0.0.0.0 -> 255.255.255.255 DHCP DHCP Discover - Transaction ID 0x1091b563
-  0.293765 192.168.99.1 -> 192.168.99.99 DHCP DHCP Offer    - Transaction ID 0x1091b563
-  0.295618      0.0.0.0 -> 255.255.255.255 DHCP DHCP Request  - Transaction ID 0x1091b563
-  0.297473 192.168.99.1 -> 192.168.99.99 DHCP DHCP ACK      - Transaction ID 0x1091b563
-  0.498407 AlertmeC_05:64:f4 -> Broadcast    ARP Who has 192.168.99.1?  Tell 192.168.99.99
-  0.498443 Lite-OnC_58:c6:7f -> AlertmeC_05:64:f4 ARP 192.168.99.1 is at 00:a0:cc:58:c6:7f
-  0.498818 192.168.99.99 -> 192.168.99.1 DNS Standard query A imgserver.irissmarthome.com
-  0.498955 192.168.99.1 -> 192.168.99.99 DNS Standard query response, Refused
-  5.502586 Lite-OnC_58:c6:7f -> AlertmeC_05:64:f4 ARP Who has 192.168.99.99?  Tell 192.168.99.1
-  5.503003 AlertmeC_05:64:f4 -> Lite-OnC_58:c6:7f ARP 192.168.99.99 is at 00:1c:2b:05:64:f4
- 10.021332 192.168.99.99 -> 192.168.99.1 DHCP DHCP Release  - Transaction ID 0x9835f90d
 ```
 
 * Refuses to connect to the default gateway when provided as imgserver.irissmarthome.com:
@@ -860,9 +843,8 @@ MAC Address: 00:1C:2B:05:64:F4 (Alertme.com Limited)
 Nmap done: 1 IP address (1 host up) scanned in 835.06 seconds
 ```
 
-### Port 20405
+### UDP/20405
 
-* Not sure what this is, but it is sent first thing when the device boots
 * Not assigned
 * Contains information about the OS and CPU
 
@@ -903,7 +885,7 @@ Connection from 192.168.99.99 port 20405 [udp/*] accepted
 HubInfo:Type 0,Mk 6,Name JupiterHub,HubOS v1.29,HubOSCrc 4E435BC9,CAKeysCrc 127D5856,HubApp v3.4r21,MAC 00:1C:2B:05:64:F4,CPUID 9263009E,HubServer hubserver.irissmarthome.com:443,AuthServer auth.irissmarthome.com:443,ImgServer imgserver.irissmarthome.com:443,TstServer imgserver.irissmarthome.com:443,IP 192.168.99.99,EUI64 000D6F0002C38E3D
 ```
 
-### Port 40000
+### UDP/40000
 
 ```
 # nc -v -l -u -k 192.168.99.1 40000
@@ -912,15 +894,219 @@ MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:
 ...
 ```
 
+### Bootup Connections
+
+* 192.168.99.1 - default router (eth1.9)
+* 192.168.99.2 - imgserver
+* 192.168.99.3 - auth
+* 192.168.99.4 - hubserver
+
+```
+# dnsmasq -d  -h -D -R --dhcp-range=192.168.99.100,192.168.99.100,120m -G "00:1c:2b:05:64:f4,192.168.99.99,hello" --dhcp-option=option:ntp-server,192.168.99.1 -A /imgserver.irissmarthome.com/192.168.99.2 -A /auth.irissmarthome.com/192.168.99.3 -A /hubserver.irissmarthome.com/192.168.99.4
+dnsmasq: started, version 2.59 cachesize 150
+dnsmasq: compile time options: IPv6 GNU-getopt DBus i18n DHCP TFTP conntrack IDN
+dnsmasq-dhcp: DHCP, IP range 192.168.99.100 -- 192.168.99.100, lease time 2h
+dnsmasq: cleared cache
+dnsmasq-dhcp: DHCPRELEASE(eth1.9) 192.168.99.99 00:1c:2b:05:64:f4
+dnsmasq-dhcp: DHCPDISCOVER(eth1.9) 00:1c:2b:05:64:f4
+dnsmasq-dhcp: DHCPOFFER(eth1.9) 192.168.99.99 00:1c:2b:05:64:f4
+dnsmasq-dhcp: DHCPREQUEST(eth1.9) 192.168.99.99 00:1c:2b:05:64:f4
+dnsmasq-dhcp: DHCPACK(eth1.9) 192.168.99.99 00:1c:2b:05:64:f4 hello
+```
+
+* udp/20405
+* DHCP
+* udp/20405
+* (delay)
+* imgserver.irissmarthome.com (disconnect right away)
+* 40000 (x10)
+  * Appears to transition into a new state here
+* DHCP release & renew
+* imgserver.irissmarthome.com (disconnect right away)
+* (delay)
+* DHCP release & renew
+* auth.irissmarthome.com (disconnect right away)
+* auth.irissmarthome.com (TLS)
+* DHCP release & renew
+* imgserver.irissmarthome.com (disconnect right away)
+* hubserver.irissmarthome.com (disconnect right away)
+* hubserver.irissmarthome.com (TLS)
+
 ### imgserver.irissmarthome.com:443
 
 * Shows up in above as `ImgServer` and `TstServer`
+* Does not appear to actually be TLS
+
+```
+# socat OPENSSL:imgserver.irissmarthome.com:443 stdout:
+2015/01/16 13:41:24 socat[15848] E SSL_connect(): socket closed by peer
+# nc -v 184.106.86.181 443
+Connection to 184.106.86.181 443 port [tcp/https] succeeded!
+GET / HTTP/1.0
+# nc -v 184.106.86.181 443
+Connection to 184.106.86.181 443 port [tcp/https] succeeded!
+help
+# nc -v 184.106.86.181 443
+Connection to 184.106.86.181 443 port [tcp/https] succeeded!
+HELP
+#
+```
 
 ### auth.irissmarthome.com:443
 
 * Shows up in above as `AuthServer`
+* Appears to authenticate the server (as it should):
+
+```
+# socat -dddd OPENSSL-LISTEN:443,bind=192.168.99.3,fork,reuseaddr,key=privkey.pem,cert=auth.crt stdout:
+2015/01/16 13:37:05 socat[15786] E SSL_accept(): socket closed by peer
+2015/01/16 13:37:05 socat[15783] W waitpid(): child 15786 exited with status 1
+2015/01/16 13:37:05 socat[15787] E SSL_accept(): error:14094412:SSL routines:SSL3_READ_BYTES:sslv3 alert bad certificate
+2015/01/16 13:37:05 socat[15783] W waitpid(): child 15787 exited with status 1
+```
 
 ### hubserver.irissmarthome.com:443
 
-* Shows up in above as HubServer
+* Shows up in above as `HubServer`
+* Uses only TLS_RSA_WITH_AES_256_CBC_SHA
+* Appears to authenticate the server:
+
+```
+# socat -dddd OPENSSL-LISTEN:443,bind=192.168.99.4,fork,reuseaddr,key=privkey.pem,cert=hubserver.crt stdout: 2015/01/16 13:35:42 socat[15779] E SSL_accept(): socket closed by peer
+2015/01/16 13:35:42 socat[15778] W waitpid(): child 15779 exited with status 1
+2015/01/16 13:35:42 socat[15780] E SSL_accept(): error:14094412:SSL routines:SSL3_READ_BYTES:sslv3 alert bad certificate
+2015/01/16 13:35:42 socat[15778] W waitpid(): child 15780 exited with status 1
+```
+
+## After Activation
+
+* Looks like Jupiter upgraded itself, but not allowed to go back online for
+  this stage
+
+### udhcpc Vulnerable?
+
+* CVE-2011-2716
+* No longer sends DHCP option 60, so inconclusive:
+
+```
+Bootstrap Protocol
+    Message type: Boot Request (1)
+    Hardware type: Ethernet
+    Hardware address length: 6
+    Hops: 0
+    Transaction ID: 0x60861e1e
+    Seconds elapsed: 5
+    Bootp flags: 0x0000 (Unicast)
+        0... .... .... .... = Broadcast flag: Unicast
+        .000 0000 0000 0000 = Reserved flags: 0x0000
+    Client IP address: 0.0.0.0 (0.0.0.0)
+    Your (client) IP address: 0.0.0.0 (0.0.0.0)
+    Next server IP address: 0.0.0.0 (0.0.0.0)
+    Relay agent IP address: 0.0.0.0 (0.0.0.0)
+    Client MAC address: AlertmeC_05:64:f4 (00:1c:2b:05:64:f4)
+    Client hardware address padding: 00000000000000000000
+    Server host name not given
+    Boot file name not given
+    Magic cookie: DHCP
+    Option: (t=53,l=1) DHCP Message Type = DHCP Request
+        Option: (53) DHCP Message Type
+        Length: 1
+        Value: 03
+    Option: (t=50,l=4) Requested IP Address = 192.168.5.151
+        Option: (50) Requested IP Address
+        Length: 4
+        Value: c0a80597
+    Option: (t=54,l=4) DHCP Server Identifier = 192.168.0.1
+        Option: (54) DHCP Server Identifier
+        Length: 4
+        Value: c0a80001
+    Option: (t=55,l=3) Parameter Request List
+        Option: (55) Parameter Request List
+        Length: 3
+        Value: 010306
+        1 = Subnet Mask
+        3 = Router
+        6 = Domain Name Server
+    End Option
+    Padding
+```
+
+### UDP/20405
+
+* No longer sends 2nd message containing versions
+
+### UDP/40000
+
+* Still shows HubOS 1.29:
+
+```
+# nc -v -l -u  40000
+Connection from 192.168.5.150 port 40000 [udp/*] accepted
+MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29MAC 00:1c:2b:05:64:f4,HubOS 1.29
+```
+
+### TCP Port Scan
+
+* I'm not sure I like that:
+
+```
+Nmap scan report for 192.168.99.99
+Host is up (0.00050s latency).
+Not shown: 65535 closed ports
+PORT   STATE SERVICE VERSION
+80/tcp open  http?
+MAC Address: 00:1C:2B:05:64:F4 (Alertme.com Limited)
+
+Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1016.66 seconds
+```
+
+* But it looks very dumbed-down:
+
+```
+# nc -v 192.168.99.99 80
+Connection to 192.168.99.99 80 port [tcp/http] succeeded!
+two
+three
+four
+five
+
+HTTP/1.1 200 OK
+```
+
+## Online
+
+```
+# nmap -sS -p0-65535 192.168.5.150
+
+Starting Nmap 5.21 ( http://nmap.org ) at 2015-01-16 14:51 EST
+Nmap scan report for dhcp-192-168-5-150.int.chr.is (192.168.5.150)
+Host is up (0.00051s latency).
+Not shown: 65535 closed ports
+PORT   STATE SERVICE
+80/tcp open  http
+MAC Address: 00:1C:2B:05:64:F4 (Alertme.com Limited)
+
+Nmap done: 1 IP address (1 host up) scanned in 81.72 seconds
+```
+
+### Hub connection
+
+* Uses TLS client (mutual) auth:
+
+```
+ 33.664892 192.168.5.150 -> 50.57.238.106 SSL 123 Client Hello
+ 33.715287 50.57.238.106 -> 192.168.5.150 TLSv1 1515 Server Hello, Certificate, Certificate Request, Server Hello Done
+ 33.731905 192.168.5.150 -> 50.57.238.106 TLSv1 757 Certificate
+ 33.820177 192.168.5.150 -> 50.57.238.106 TLSv1 205 Client Key Exchange
+ 33.982480 192.168.5.150 -> 50.57.238.106 TLSv1 205 Certificate Verify
+ 34.033706 192.168.5.150 -> 50.57.238.106 TLSv1 173 Change Cipher Spec, Encrypted Handshake Message
+ 34.084893 50.57.238.106 -> 192.168.5.150 TLSv1 125 Change Cipher Spec, Encrypted Handshake Message
+ 34.148508 192.168.5.150 -> 50.57.238.106 TLSv1 295 Application Data
+```
+
+* This looks to be a tough nut to crack.  There's an EMI shield over the flash
+  which would have to be removed to dump the flash.  Has JTAG (10-pin)
+  header unpopulated, console also appears to be open, but might have 0 ohm 
+  resistors that need to be soldered in.
 
