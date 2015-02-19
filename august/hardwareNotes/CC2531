@@ -1,0 +1,95 @@
+The August has a CC2541 SimpleLink Bluetooth Smart and Proprietary Wireless MCU
+
+FUNCTIONAL DIAGRAM:
+
+<img src = "http://www.ti.com/ds_dgm/images/fbd_swrs110d.gif">
+
+
+
+Description from TI:
+
+~~~~
+The CC2541 is a power-optimized true system-on-chip (SoC) solution for both Bluetooth low energy and proprietary 2.4-GHz applications. It enables robust network nodes to be built with low total bill-of-material costs. The CC2541 combines the excellent performance of a leading RF transceiver with an industry-standard enhanced 8051 MCU, in-system programmable flash memory, 8-KB RAM, and many other powerful supporting features and peripherals. The CC2541 is highly suited for systems where ultralow power consumption is required. This is specified by various operating modes. Short transition times between operating modes further enable low power consumption.
+
+The CC2541 is pin-compatible with the CC2540 in the 6-mm × 6-mm QFN40 package, if the USB is not used on the CC2540 and the I2C/extra I/O is not used on the CC2541. Compared to the CC2540, the CC2541 provides lower RF current consumption. The CC2541 does not have the USB interface of the CC2540, and provides lower maximum output power in TX mode. The CC2541 also adds a HW I2C interface.
+
+The CC2541 is pin-compatible with the CC2533 RF4CE-optimized IEEE 802.15.4 SoC.
+
+The CC2541 comes in two different versions: CC2541F128/F256, with 128 KB and 256 KB of flash memory, respectively.
+~~~~
+
+Features:
+
+RF
+2.4-GHz Bluetooth low energy Compliant and Proprietary RF System-on-Chip
+Supports 250-kbps, 500-kbps, 1-Mbps, 2-Mbps Data Rates
+Excellent Link Budget, Enabling Long-Range Applications Without External Front End
+Programmable Output Power up to 0 dBm
+Excellent Receiver Sensitivity (–94 dBm at 1 Mbps), Selectivity, 
+and Blocking Performance
+Suitable for Systems Targeting Compliance With Worldwide Radio 
+Frequency Regulations: ETSI EN 300 328 and EN 300 440 Class 2 (Europe), 
+FCC CFR47 Part 15 (US), and ARIB STD-T66 (Japan)
+Layout
+Few External Components
+Reference Design Provided
+6-mm × 6-mm QFN-40 Package
+Pin-Compatible With CC2540 (When Not Using USB or I2C)
+Low Power
+Active-Mode RX Down to: 17.9 mA
+Active-Mode TX (0 dBm): 18.2 mA
+Power Mode 1 (4-µs Wake-Up): 270 µA
+Power Mode 2 (Sleep Timer On): 1 µA
+Power Mode 3 (External Interrupts): 0.5 µA
+Wide Supply-Voltage Range (2 V–3.6 V)
+TPS62730 Compatible Low Power in Active Mode
+RX Down to: 14.7 mA (3-V supply)
+TX (0 dBm): 14.3 mA (3-V supply)
+Microcontroller
+High-Performance and Low-Power 8051 Microcontroller Core 
+With Code Prefetch
+In-System-Programmable Flash, 128- or 256-KB
+8-KB RAM With Retention in All Power Modes
+Hardware Debug Support
+Extensive Baseband Automation, Including Auto-Acknowledgment 
+and Address Decoding
+Retention of All Relevant Registers in All Power Modes
+Peripherals
+Powerful Five-Channel DMA
+General-Purpose Timers (One 16-Bit, Two 8-Bit)
+IR Generation Circuitry
+32-kHz Sleep Timer With Capture
+Accurate Digital RSSI Support
+Battery Monitor and Temperature Sensor
+12-Bit ADC With Eight Channels and Configurable Resolution
+AES Security Coprocessor
+Two Powerful USARTs With Support for Several Serial Protocols
+23 General-Purpose I/O Pins 
+(21 × 4 mA, 2 × 20 mA)
+I2C interface
+2 I/O Pins Have LED Driving Capabilities
+Watchdog Timer
+Integrated High-PerformanceComparator
+Development Tools
+CC2541 Evaluation Module Kit (CC2541EMK)
+CC2541 Mini Development Kit (CC2541DK-MINI)
+SmartRF™ Software
+IAR Embedded Workbench™ Available
+
+Software Features
+
+Bluetooth v4.0 Compliant Protocol Stack for Single-Mode BLE 
+Solution
+Complete Power-Optimized Stack, Including Controller and 
+HostGAP – Central, Peripheral, Observer, or Broadcaster 
+(Including Combination Roles)ATT / GATT – Client and ServerSMP – 
+AES-128 Encryption and DecryptionL2CAP
+Sample Applications and Profiles
+Generic Applications for GAP Central and Peripheral Roles
+Proximity, Accelerometer, Simple Keys, and Battery GATT Services
+More Applications Supported in BLE Software Stack
+Multiple Configuration Options
+Single-Chip Configuration, Allowing Applications to Run on CC2541
+Network Processor Interface for Applications Running on an External 
+Microcontroller
+BTool – Windows PC Application for Evaluation, Development, and Test
