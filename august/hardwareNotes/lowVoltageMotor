@@ -1,0 +1,17 @@
+It appears that the August has a DRV8833 Texas Instrument 2A Low Voltage Dual Brushed DC or Single Bipolar Stepper Motor Driver 
+( http://www.ti.com/product/drv8833)
+
+From TI:
+
+The DRV8833 provides a dual bridge motor driver solution for toys, printers, and other mechatronic applications.
+
+The device has two H-bridge drivers, and can drive two DC brush motors, a bipolar stepper motor, solenoids, or other inductive loads.
+
+The output driver block of each H-bridge consists of N-channel power MOSFET’s configured as an H-bridge to drive the motor windings. Each H-bridge includes circuitry to regulate or limit the winding current.
+
+Internal shutdown functions with a fault output pin are provided for over current protection, short circuit protection, under voltage lockout and overtemperature. A low-power sleep mode is also provided.
+
+The DRV8833 is packaged in a 16-pin HTSSOP or QFN package with PowerPAD 
+
+
+
