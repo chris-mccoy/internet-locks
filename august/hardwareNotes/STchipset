@@ -1,0 +1,8 @@
+The August appear to have an STMicroelectronis STM32L EnergyLite MCU. The STM32L offers flash memory up to 128KB, RAM up to 16KB, and an extensive range of peripherals including USB and LCD controller. The STM32L can operate from a 1.8V supply, and consume as little as 0.27 µA in standby mode.
+
+http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00027566.pdf
+
+Development toolchain
+• IAR EWARM (IAR Embedded Workbench)
+• Keil MDK-ARM
+• GCC-based IDE (ARM, TrueSTUDIO, etc)
