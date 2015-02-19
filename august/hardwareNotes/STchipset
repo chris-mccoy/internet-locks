@@ -6,3 +6,6 @@ Development toolchain
 • IAR EWARM (IAR Embedded Workbench)
 • Keil MDK-ARM
 • GCC-based IDE (ARM, TrueSTUDIO, etc)
+
+The latest versions of the demonstration source code and associated documentation can be
+downloaded from www.st.com/stm32l1-discovery
